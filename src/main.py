@@ -1,9 +1,13 @@
-from bezier_dividenconquer import plt,Point,quadraticBezier
+from bezier_dividenconquer import plt,Point,quadraticBezier,nDegreeBezier
 
-p0 = Point(-30, 100)
-p2 = Point(200, -200)
-p1 = Point(150, 30)
-ans = (quadraticBezier(p0, p2, p1, iterations = 15))
+p0 = Point(0, 0)
+p2 = Point(50, 200)
+p3 = Point(100, 60)
+p4 = Point(150, 150)
+p5 = Point(200, 100)
+p1 = Point(150, 60)
+# ans = (quadraticBezier(p0, p2, p1, iterations = 1))
+ans = (nDegreeBezier([p0, p2, p3, p4, p1], iterations = 5))
 xvals = [p.x for p in ans]
 yvals = [p.y for p in ans]
 plt.plot(xvals, yvals)
