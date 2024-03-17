@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-import matplotlib.pyplot as plt
 
 @dataclass
 class Point :
@@ -98,8 +97,8 @@ def nDegreeBezier(points: list[Point], iterations: int) -> list[Point] :
         r0 = prev_points[0]
         
         # divide and conquer
-        l = nDegreeBezier(left_points, iterations - 1)
+        l = nDegreeBezier(left_points, iterations - 1)[:-1]
         m = [r0]
-        r = nDegreeBezier(right_points, iterations - 1)
+        r = nDegreeBezier(right_points, iterations - 1)[1:]
         
         return l + m + r
