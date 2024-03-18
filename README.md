@@ -1,6 +1,9 @@
 # Tucil2_13522022
 Tugas Kecil 2 Mata Kuliah IF2211 Strategi Algoritma
 
+## Project Description
+This small project is an assignment for the course IF2211 "Strategi Algoritma" of ITB. The program is a Command Line Input (CLI) based program that allows the user to generate a Bezier Curve based on parameters that they can put in an input file. The program also holds a dozen fun facts about Bezier Curves.
+
 ## Requirements
 This program only requires `matplotlib` to display the Bezier Curve, so if you do not have it installed yet...
 ```
