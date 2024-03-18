@@ -1,5 +1,6 @@
 from bezier_dividenconquer import Point
 import matplotlib.pyplot as plt
+import os
 
 def ui() -> str :
 
@@ -32,6 +33,9 @@ def txtinput() -> list[Point] :
     filename = filename if filename else "input.txt"
     error = ""
     try :
+        if not os.path.isfile(filename) :
+            filename = "../test/" + filename
+
         with open(filename, 'r') as f :
 
             points = list()
@@ -109,6 +113,7 @@ def showgraph(points, x1,x2,y1,y2, controls) :
     x = [p.x for p in controls]
     y = [p.y for p in controls]
     plt.scatter(x,y, color = "red")
+    plt.plot(x,y, color = 'black', alpha=0.1)
 
     plt.show()
 

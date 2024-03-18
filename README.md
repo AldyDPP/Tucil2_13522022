@@ -22,7 +22,7 @@ python3 main.py
 
 1. When running the program, you are given 3 input options. Enter 1 to generate a Bezier Curve based on the input file. Enter 2 to get a link to  this help menu. Enter 3 to display a random fun fact about Bezier Curves.
 
-2. In option 1, a Bezier Curve will be generated based on the parameters that has been provided in the input file. You will be prompted to input the name for the input file, but you can leave it blank and it will default to \input.txt\.
+2. In option 1, a Bezier Curve will be generated based on the parameters that has been provided in the input file. You will be prompted to input the name for the input file, but you can leave it blank and it will default to "input.txt".
 
 3. The following is the format for the input file. 
 - The first line contains a single integer `p` which is the amount of _control points_ the Bezier Curve will have. 
@@ -42,5 +42,6 @@ python3 main.py
 ```
 
 5. The constraints for the input file are: p must be an integer larger than 1, x<sub>i</sub> and y<sub>i</sub> are real numbers, t must be a non negative integer, x<sub>1</sub> < x<sub>2</sub> and y<sub>1</sub> < y<sub>2</sub>. Inputs that do not fit these constraints will also cause the program to display an error message and close.
-6. The first and last points will be the start and endpoints of the Bezier Curve respectively.
-7. Make sure you check out all the fun facts about Bezier Curves!
+6. The input file must be directly inside either the `src` folder or the `test` folder
+7. The first and last points will be the start and endpoints of the Bezier Curve respectively.
+8. Make sure you check out all the fun facts about Bezier Curves!
