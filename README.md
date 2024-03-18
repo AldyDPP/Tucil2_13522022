@@ -51,5 +51,6 @@ python3 main.py
 8. Make sure you check out all the fun facts about Bezier Curves!
 
 ## Author
-NAMA : Renaldy Arief Susanto\n
-NIM : 13522022
+|NAMA|NIM|
+|-|-|
+|Renaldy Arief Susanto|13522022|
