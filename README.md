@@ -20,9 +20,9 @@ python3 main.py
 
 ## How To Use
 
-1. When running the program, you are given 3 input options. Enter 1 to generate a Bezier Curve based on the input file. Enter 2 to get a link to  this help menu. Enter 3 to display a random fun fact about Bezier Curves.
+1. When running the program, you are given 3 input options. Enter 1 to generate a Bezier Curve based on the input file. Enter 2 to get a link to  this help menu. Enter 3 to display a random fun fact about Bezier Curves. You can also not enter anything, which will by default move you to option 1.
 
-2. In option 1, a Bezier Curve will be generated based on the parameters that has been provided in the input file. You will be prompted to input the name for the input file, but you can leave it blank and it will default to "input.txt".
+2. In option 1, you will be prompted to enter a file name. You can leave this blank, in which case "input.txt" will be used by default. A Bezier Curve will be generated based on the parameters that you provide in the input file that you use. Make sure the file is in the same directory as `main.py`.
 
 3. The following is the format for the input file. 
 - The first line contains a single integer `p` which is the amount of _control points_ the Bezier Curve will have. 
