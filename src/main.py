@@ -33,6 +33,6 @@ def main() :
 
     # Output
     print("Enjoy your Bezier Curve!")
-    showgraph(result, x1,x2,y1,y2)
+    showgraph(result, x1,x2,y1,y2, controls=points)
     
 main()

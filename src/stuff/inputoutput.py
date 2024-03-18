@@ -98,11 +98,18 @@ def txtinput() -> list[Point] :
         print()
         quit()
 
-def showgraph(points, x1,x2,y1,y2) :
+def showgraph(points, x1,x2,y1,y2, controls) :
+
     x = [p.x for p in points]
     y = [p.y for p in points]
+    
     plt.plot(x, y)
     plt.axis([x1,x2,y1,y2])
+
+    x = [p.x for p in controls]
+    y = [p.y for p in controls]
+    plt.scatter(x,y, color = "red")
+
     plt.show()
 
 def printhelp() :
