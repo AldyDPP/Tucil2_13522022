@@ -1,6 +1,20 @@
 # Tucil2_13522022
 Tugas Kecil 2 Mata Kuliah IF2211 Strategi Algoritma
 
+## Requirements
+This program only requires `matplotlib` to display the Bezier Curve, so if you do not have it installed yet...
+```
+pip install matplotlib
+```
+
+## How To Run
+
+Make sure to navigate to src folder, then just run with Python:
+
+```
+python3 main.py
+```
+
 ## How To Use
 
 1. When running the program, you are given 3 input options. Enter 1 to generate a Bezier Curve based on the input file. Enter 2 to get a link to  this help menu. Enter 3 to display a random fun fact about Bezier Curves.
