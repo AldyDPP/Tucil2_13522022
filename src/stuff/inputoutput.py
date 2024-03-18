@@ -3,16 +3,17 @@ import matplotlib.pyplot as plt
 
 def ui() -> str :
 
-    print("-----------------------------------------")
-    print("Hello, let's generate some Bezier Curves!")
-    print("-----------------------------------------")
+    print("-------------------------------------------")
+    print("Hello, this program is about Bezier Curves!")
+    print("-------------------------------------------")
     print()
-    print("Pick your method of input:")
-    print("1. Direct (command line) input.")
-    print("2. Text File input.")
+    print("What would you like to do?")
+    print("1. Generate a Bezier Curve from input file.")
+    print("2. Help.")
     print("3. Give me a fun fact about Bezier Curves!")
 
     choice = input("(1/2/3): ")
+    if not choice : return 1
 
     try :
         choice = int(choice)
@@ -20,72 +21,95 @@ def ui() -> str :
             raise ValueError
         else :
             return choice
+        
     except ValueError: 
         print("Please input correctly.")
-
-def cliinput() -> list[Point] :
-    p = int(input("Input number of points: "))
-    print("Point input format: x y")
-    print("Example: 2.5 -6")
-    print("---------------")
-
-    try :
-        points = list()
-        for i in range(p) :
-            x,y = map(float, input(f"Input point-{i+1}: ").split())
-            points.append(Point(x,y))
-
-        return points
-    
-    except ValueError :
-        print("The x and y values for a point must be real numbers.")
         quit()
 
 def txtinput() -> list[Point] :
 
+    filename = input("Input filename (you can leave this blank to default to \"input.txt\"): ")
+    filename = filename if filename else "input.txt"
+    error = ""
     try :
-        with open("input.txt", 'r') as f :
+        with open(filename, 'r') as f :
 
             points = list()
             
-            t = f.readline().strip()
+            p = f.readline().split()
 
-            if len(t) != 1 :
-                raise IndexError
+            if len(p) != 1 :
+                error = "Wrong format at line 1. Make sure the amount of points is a positive integer larger than 1."
+                raise ValueError
             
-            t = int(t)
+            try :
+                p = int(p[0])
+            except ValueError :
+                error = "Wrong format at line 1. Make sure you have put in an integer."
+                raise ValueError
 
-            for i in range(t) :
+            for i in range(p) :
 
                 line = f.readline().split()
 
                 if len(line) != 2 :
-                    raise IndexError
+                    error = f"Wrong format at line {2 + i}. Make sure you put in exactly two real numbers for each point."
+                    raise ValueError
                 
-                x,y = map(int, line)
-                points.append(Point(x,y))
+                try :
+                    x,y = map(float, line)
+                    points.append(Point(x,y))
+                except ValueError :
+                    error =  f"Wrong format at line {2 + i}. Make sure you have put in real values."
+                    raise ValueError
             
-            return points
+            t = f.readline().split()
+            if len(t) != 1 :
+                error = f"Wrong format at line {p + 2}. Make sure the iteration count is a non negative integer."
+                raise ValueError
+            
+            try :
+                t = int(t[0])
+            except ValueError :
+                error = f"Wrong format at line {p + 2}. Make sure you have put in a non negative integer."
+                raise ValueError
 
+            x1,x2,y1,y2 = 0,0,0,0
+            try :
+                x1,x2,y1,y2 = map(float, f.readline().split())
+                if x1 >= x2 or y1 >= y2 :
+                    raise ValueError
+                
+            except ValueError:
+                error = f"Wrong format at line {p + 3}. Make sure the last line contains 4 real numbers x1 x2 y1 y2, where x1 < x2 and y1 < y2"
+                raise ValueError
+
+            return p,points,t,x1,x2,y1,y2
+        
     except ValueError :
-        print("Failed to read from the txt file. Make sure the inputs are all real numbers!")
-        quit()
-    
-    except IndexError :
-        print("Failed to read from the txt file. Please recheck the input format.")
+        print("Failed to read from input file.")
+        print(error)
+        print()
         quit()
     
     except FileNotFoundError :
-        print("Couldn't find input.txt file. Perhaps you have moved/rename it?")
+        error = "Couldn't find the file. Perhaps you have moved/renamed it?"
+        print(error)
+        print()
         quit()
 
-def showgraph(points: list[Point], zf : int) -> None :
-
-    xvals = [p.x for p in points]
-    yvals = [p.y for p in points]
-    plt.plot(xvals, yvals)
-    plt.axis([-zf,zf,-zf,zf])
+def showgraph(points, x1,x2,y1,y2) :
+    x = [p.x for p in points]
+    y = [p.y for p in points]
+    plt.plot(x, y)
+    plt.axis([x1,x2,y1,y2])
     plt.show()
+
+def printhelp() :
+    print("Refer to the following link on how to use this program.")
+    print("https://github.com/AldyDPP/Tucil2_13522022#How-To-Use")
+    print()
+    quit()
 
 def funfact() -> None :
 

@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from func_timing import timethis
 
 @dataclass
 class Point :
@@ -52,7 +53,7 @@ def quadraticBezier(p0, p2, p1, iterations: int) -> list[Point]:
         r = (quadraticBezier(r0, p21, p1, iterations - 1))[1:]
         
         return l + m + r
-    
+
 def nDegreeBezier(points: list[Point], iterations: int) -> list[Point] :
 
     if iterations == 0 :
@@ -102,3 +103,8 @@ def nDegreeBezier(points: list[Point], iterations: int) -> list[Point] :
         r = nDegreeBezier(right_points, iterations - 1)[1:]
         
         return l + m + r
+
+# Because nDegreeBezier is a recursive function, a helper is needed to time it from start to end
+@timethis
+def helper(points: list[Point], iterations: int) :
+    return nDegreeBezier(points, iterations)
