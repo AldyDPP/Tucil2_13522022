@@ -15,7 +15,7 @@ def cls() :
 def main() :
 
     # Initialize
-    # cls()
+    cls()
     points = []
     
     # Input
@@ -30,11 +30,11 @@ def main() :
         funfact()
     
     # Solve
-    # result = nDegreeBezier(points = points, iterations = t)
+    result = nDegreeBezier(points = points, iterations = t)
 
     # For benchmarking the time taken for Brute force and DnC 
-    result = helper(points = points, iterations = t)
-    # result = nDegreeBruteForceBezier(points)
+    # result = helper(points = points, iterations = t)
+    # result = nDegreeBruteForceBezier(points, iterations = t)
 
     # Output
     print("Enjoy your Bezier Curve!")

@@ -4,9 +4,11 @@ from math import comb
 from func_timing import timethis
 
 @timethis
-def nDegreeBruteForceBezier(points: list[Point]) :
+
+def nDegreeBruteForceBezier(points: list[Point], iterations) :
     n = len(points) - 1
-    t = 0.001
+    diff = 1 / (2 ** iterations)
+    t = 0
     ans = list()
 
     while t <= 0.999 :
@@ -18,7 +20,7 @@ def nDegreeBruteForceBezier(points: list[Point]) :
             
         ans.append(p)
 
-        t += 0.001
+        t += diff
     
     return ans
 
