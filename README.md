@@ -5,9 +5,13 @@ Tugas Kecil 2 Mata Kuliah IF2211 Strategi Algoritma
 This small project is an assignment for the course IF2211 "Strategi Algoritma" of ITB. The program is a Command Line Input (CLI) based program that allows the user to generate a Bezier Curve based on parameters that they can put in an input file. The program also aims to entertain the user with a dozen fun facts about Bezier Curves.
 
 ## Requirements
-This program only requires `matplotlib` to display the Bezier Curve, so if you do not have it installed yet...
+This program requires Python to run. Other than the Python Standard Library, only `matplotlib` is required to display the Bezier Curve, so if you do not have it installed yet...
 ```
 pip install matplotlib
+```
+However, if you're still using Python 3.7 and below, you may need to install the `dataclasses` library
+```
+pip install dataclasses
 ```
 
 ## How To Run
@@ -44,3 +48,7 @@ python3 main.py
 5. The constraints for the input file are: p must be an integer larger than 1, x<sub>i</sub> and y<sub>i</sub> are real numbers, t must be a non negative integer, x<sub>1</sub> < x<sub>2</sub> and y<sub>1</sub> < y<sub>2</sub>. Inputs that do not fit these constraints will also cause the program to display an error message and close.
 6. The first and last points will be the start and endpoints of the Bezier Curve respectively.
 7. Make sure you check out all the fun facts about Bezier Curves!
+
+## Author
+NAMA : Renaldy Arief Susanto
+NIM : 13522022
