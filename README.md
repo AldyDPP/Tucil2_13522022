@@ -45,7 +45,7 @@ python3 main.py
 -300 300 -300 300
 ```
 
-5. The constraints for the input file are: p must be an integer larger than 1, x<sub>i</sub> and y<sub>i</sub> are real numbers, t must be a non negative integer, x<sub>1</sub> < x<sub>2</sub> and y<sub>1</sub> < y<sub>2</sub>. Inputs that do not fit these constraints will also cause the program to display an error message and close.
+5. The constraints for the input file are: `p` must be an integer larger than 1, x<sub>i</sub> and y<sub>i</sub> are real numbers, `t` must be a non negative integer, x<sub>1</sub> < x<sub>2</sub> and y<sub>1</sub> < y<sub>2</sub>. Inputs that do not fit these constraints will also cause the program to display an error message and close.
 6. The first and last points will be the start and endpoints of the Bezier Curve respectively.
 7. Once you've made sure your input file is correct, simply enter it in the command line and the matplotlib window should pop up with your Bezier curve. The program will then end once you close the window.
 8. Make sure you check out all the fun facts about Bezier Curves!
